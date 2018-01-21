@@ -175,47 +175,46 @@ void snakeMove(int prev_direction, int next_direction) {
   moveCursorTo(tail->x, tail->y);
   printf(" ");
   switch (next_direction) {
-
-  case LEFT:
-    if (prev_direction == RIGHT) {
-      tail->x = (head->x + 1);
-      tail->y = head->y;
-      break;
-    } else {
-      tail->x = (head->x - 1);
-      tail->y = head->y;
-      break;
-    }
-  case RIGHT:
-    if (prev_direction == LEFT) {
-      tail->x = (head->x - 1);
-      tail->y = head->y;
-      break;
-    } else {
-      tail->x = (head->x + 1);
-      tail->y = head->y;
-      break;
-    }
-  case UP:
-    if (prev_direction == DOWN) {
-      tail->y = (head->y + 1);
-      tail->x = head->x;
-      break;
-    } else {
-      tail->x = head->x;
-      tail->y = (head->y - 1);
-      break;
-    }
-  case DOWN:
-    if (prev_direction == UP) {
-      tail->x = head->x;
-      tail->y = (head->y - 1);
-      break;
-    } else {
-      tail->y = (head->y + 1);
-      tail->x = head->x;
-      break;
-    }
+    case LEFT:
+      if (prev_direction == RIGHT) {
+        tail->x = (head->x + 1);
+        tail->y = head->y;
+        break;
+      } else {
+        tail->x = (head->x - 1);
+        tail->y = head->y;
+        break;
+      }
+    case RIGHT:
+      if (prev_direction == LEFT) {
+        tail->x = (head->x - 1);
+        tail->y = head->y;
+        break;
+      } else {
+        tail->x = (head->x + 1);
+        tail->y = head->y;
+        break;
+      }
+    case UP:
+      if (prev_direction == DOWN) {
+        tail->y = (head->y + 1);
+        tail->x = head->x;
+        break;
+      } else {
+        tail->x = head->x;
+        tail->y = (head->y - 1);
+        break;
+      }
+    case DOWN:
+      if (prev_direction == UP) {
+        tail->x = head->x;
+        tail->y = (head->y - 1);
+        break;
+      } else {
+        tail->y = (head->y + 1);
+        tail->x = head->x;
+        break;
+      }
   }
   //Updating Snake Head after change the position of Tail to Head
   head->next = tail;
